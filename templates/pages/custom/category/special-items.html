@@ -1,0 +1,35 @@
+---
+category:
+products:
+limit: 1
+---
+
+{{#partial "page"}}
+<div class="page special-items-section">
+
+  {{#if customer}}
+  <div class="">
+    <p>{{customer.name}}</p>
+    <p>{{customer.email}}</p>
+    <p>{{customer.phone}}</p>
+  </div>
+  {{/if}}
+
+  <div class="category-header">
+    <h1 class="category-title">{{ category.name }}</h1>
+    <button id="btnAddAlltoCart" productId="{{category.products.[0].id}}">Add All To Cart</button>
+    <button id="btnRemoveAllItems">Remove All Items</button>
+  </div>
+  <div class="category-product-list">
+    <ul class="productGrid">
+      <li class="product">
+        {{>components/special-items/product
+        product=category.products.[0]
+        position=(add @index 1)}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+{{/partial}}
+{{> layout/base}}

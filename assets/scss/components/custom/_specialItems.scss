@@ -1,0 +1,39 @@
+.special-items-section {
+  .category-header {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+  .category-title {
+    margin: 0;
+  }
+  .category-product-list {
+    .productGrid {
+      .product {
+        .product-card {
+          .card-img-container {
+            .second-image {
+              display: none;
+            }
+            &:hover {
+              .second-image {
+                display: block;
+              }
+              .main-image {
+                display: none;
+              }
+            }
+          }
+          .product-title {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  #btnRemoveAllItems{
+    display: none;
+  }
+}
